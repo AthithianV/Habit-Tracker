@@ -1,0 +1,38 @@
+
+
+<div class="habits ">
+    <!-- Create a habit view for each habit with emji, name, streak, best streak, toatl number of days done -->
+    <%habits.forEach(habit=>{%>
+        <%const habitName = habit.name.toLowerCase()%>
+        <div class="habit p-2 pe-5 m-2 d-flex justify-content-between align-items-center rounded bg-light text-dark">
+            
+            <div class="d-flex justify-content-around align-items-center ">
+                <div class="fs-2 border border-dark border-2 p-1 rounded">
+                    <%=emojis[habitName]%>
+                </div>
+                <h4 class="ms-3">
+                    <%= habit.name%>
+                </h4>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-droplet text-primary me-2"></i>Current Streak: <%=habit.currentStreak%>
+            </div>
+            <div>
+                <i class="fa-solid fa-fire text-danger me-2"></i>Best Streat: <%=habit.bestStreak%>
+            </div>
+            <div>
+                <i class="fa-solid fa-bullseye text-warning me-2"></i>Days: <%=habit.totalDaysDone%>/ <%=habit.daysCount%>
+            </div>
+
+            <!-- Buttons for marking done and NOt done and for deleting -->
+            <div class="buttons">
+                <%const currentDate = new Date()%>
+                <button id="done-button" type="button" onclick="markDone(`<%=habit._id%>`, `<%=currentDate%>`)" class="btn text-success"><i class="fa-solid fa-check"></i></button>
+                <button id="done-button" type="button" onclick="markUndone(`<%=habit._id%>` , `<%=currentDate%>`)" class="btn text-danger"><i class="fa-solid fa-xmark"></i></button>
+                <button id="done-button" type="button" onclick="deleteHabit(`<%=habit._id%>`, `<%=currentDate%>`)" class="btn"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            
+        </div>
+    <%})%>
+</div>

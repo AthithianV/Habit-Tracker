@@ -1,0 +1,36 @@
+<% const Quotes=[
+    {quote: '"I have learned that champions aren’t just born; champions can be made when they embrace and commit to life-changing positive habits."'
+    , author: "Lewis Howes" },
+    {quote: '"Forget inspiration. Habit is more dependable. Habit will sustain you whether you’re inspired or not."' ,
+    author: "Octavia Butler" }, {quote: '"Good habits, once established are just as hard to break as are bad habits."' ,
+    author: "Robert Puller" }, {quote: '"If you want to change your world, you need to start cultivating good habits."'
+    , author: "Mina Tadros" }, {quote: '"We are what we repeatedly do. Excellence, then, is not an act, but a habit."' ,
+    author: "Aristotle" },
+    {quote: '"If you are going to achieve excellence in big things, you develop the habit in little matters. Excellence is not an exception, it is a prevailing attitude."'
+    , author: "Colin Powell" },
+    {quote: '"If you pick the right small behavior and sequence it right, then you won’t have to motivate yourself to have it grow. It will just happen naturally, like a good seed planted in a good spot."'
+    , author: "BJ Fogg" },
+    {quote: '"You leave old habits behind by starting out with the thought, ‘I release the need for this in my life’"' ,
+    author: "Wayne W. Dyer" }, {quote: '"A man who can\' t bear to share his habits is a man who needs to quit them."',
+    author: "Stephen King" },
+    {quote: '"The chains of habit are too weak to be felt until they are too strong to be broken."' ,
+    author: "Samuel Johnson" } ]%>
+
+    <% const random_quote=Quotes[Math.floor(Math.random() * 9)] %>
+
+
+    <%if(msg){%>
+        <h4 class="text-light mt-2 text-center"><%=msg%></h4>
+    <%}%>
+
+    <div class="p-5 m-auto mt-5 border border-3 border-light bg-dark text-light w-75 rounded">
+        <h2 class="text-center">
+            <%= random_quote.quote %>
+        </h2>
+        <h4 class="mt-2 text-end text-danger">
+            - <%= random_quote.author %>
+        </h4>
+    </div>
+    <div class="text-light mt-2 text-center">For Viewing Habits - use <a href="/habits">Daily View</a>, <a href="/habits/weekly_view">Weekly view</a> from Navigation Bar</div>
+    <div class="text-light mt-2 text-center">If no habits available, Try adding new Habits(Make sure the name of habits are in single word like reading, walking...)</div>
+        
