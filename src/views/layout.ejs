@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tracko</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1e4325dabb.js" crossorigin="anonymous"></script>
+    <style>
+        @media screen and (max-width: 750px) {
+            .emoji {
+                display: none;
+            }
+    
+            .box {
+                width: 100% !important;
+            }
+            .navigation{
+                width: 100% !important;
+            }
+        }
+    </style>
 </head>
 <body class="vh-100 bg-dark">
         
         <nav class="navbar navbar-expand-lg sticky-top bg-light">
-            <div class="container-fluid w-75">
+            <div class="container-fluid w-75 navigation">
                 <a class="navbar-brand bg-dark p-1 px-2 rounded-top rounded-end text-light" href="/">Tracko</a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -33,25 +48,22 @@
 
                 </div>
                 
-                <form id="add-habit">
-                    <div class="row">
-                        <div class="col p-0">
-                            <input type="text" class="form-control bg-light text-dark" id="habitname" name="habitname" placeholder="Enter new Habit...">
-                        </div>
-                        <div class="col p-0">
-                            <button type="submit" class="btn btn-dark ms-2">
-                                <i class="fa-regular fa-plus me-1"></i> Add Habit
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                
             
         </nav>
 
         
 
         <div class="box w-75 bg-dark m-auto mt-1 p-2">
+            <form id="add-habit" class="mx-auto w-100 d-flex justify-content-center">
+                
+                <input type="text" class="form-control bg-light text-dark flex-shrink" id="habitname" name="habitname"
+                    placeholder="Enter new Habit...">
+            <button type="submit" class="btn btn-dark ms-2">
+                    <i class="fa-regular fa-plus me-1"></i> Add Habit
+                </button>
+                    
+            </form>
+
             <%-body%>    
         </div>
 
@@ -66,7 +78,6 @@
 
         // Function for marking the habit done on a given date, weekly variable specify whether the activity is from weekly view
         const markDone = async(id, date, weekly)=>{
-            console.log(weekly);
             fetch("/habits/markHabit", {
                 method: "POST", 
                 headers: {
