@@ -20,10 +20,33 @@
             .navigation{
                 width: 100% !important;
             }
+            .nav-pills{
+                margin-top: 15px;
+            }
+            .buttons{
+                display: flex !important;
+                justify-content: center !important;
+            }
+            .streaks{
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+            }
+        }
+        @media screen and (max-width: 580px) {
+            .streaks{
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+            }
         }
     </style>
 </head>
-<body class="vh-100 bg-dark">
+<body class="vh-100 vw-100 bg-dark">
         
         <nav class="navbar navbar-expand-lg sticky-top bg-light">
             <div class="container-fluid w-75 navigation">
@@ -41,9 +64,6 @@
                         <li class="nav-item me-2">
                             <a class="nav-link bg-light text-dark fs-6" href="/habits/weekly_view/"><i class="fa-solid fa-calendar-days me-1"></i>Weekly View</a>
                         </li>
-                        <li class="nav-item me-2">
-                            </a>
-                        </li>
                     </ul>
 
                 </div>
@@ -54,11 +74,11 @@
         
 
         <div class="box w-75 bg-dark m-auto mt-1 p-2">
-            <form id="add-habit" class="mx-auto w-100 d-flex justify-content-center">
+            <form id="add-habit" class="mx-auto mb-3 w-100 text-center">
                 
                 <input type="text" class="form-control bg-light text-dark flex-shrink" id="habitname" name="habitname"
                     placeholder="Enter new Habit...">
-            <button type="submit" class="btn btn-dark ms-2">
+            <button type="submit" class="btn btn-dark border border-2 border-light mx-auto my-2">
                     <i class="fa-regular fa-plus me-1"></i> Add Habit
                 </button>
                     

@@ -1,6 +1,6 @@
 
 
-<div class="container-fluid">
+<div class="container-fluid w-100">
     
     <%habitReport.forEach(habit=>{%>
         <div class="bg-white rounded my-3">
@@ -9,12 +9,12 @@
                         <%=habit.name%>
                     </h4>
 
-                <div class=" p-2 d-flex justify-content-around align-items-center">
-                    <div class=" row emoji border border-2 border-dark rounded p-2 fs-1"><%=emojis[habit.name.toLowerCase()]%></div>
+                <div class="row p-2 d-flex justify-content-around align-items-center">
+                    <div class="col-1 emoji border border-2 border-dark rounded p-2 fs-1"><%=emojis[habit.name.toLowerCase()]%></div>
                     <%const today = new Date()%>
                     <%habit.weekReport.forEach(day=>{%>
                             <%const date= day.date%>
-                        <div class=" col-sm-1 col-md-1 day d-flex flex-column align-items-center rounded p-2 px-3 <%=(date.getDate()==today.getDate())?'bg-dark text-light':'text-dark'%>">
+                        <div class="col-3 col-sm-3 col-md-1 day d-flex flex-column align-items-center rounded p-2 px-3 <%=(date.getDate()==today.getDate())?'bg-dark text-light':'text-dark'%>">
                             <div class=" fw-1 mb-2">
                                 <%=date.toString().substring(0,3)%>
                             </div>
