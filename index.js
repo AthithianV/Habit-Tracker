@@ -40,5 +40,5 @@ server.use(ErrorHandler);
 // Server is running on port 3000
 server.listen(3000, () => {
   console.log("Server Listening at 3000");
-  connectToDB(process.env.MONGODB_URL);
+  connectToDB();
 });

@@ -2,7 +2,10 @@ import mongoose from "mongoose";
 import UserModel from "../user/user.schema.js";
 import HabitModel from "../habits/habits.schema.js";
 
-const connectToDB = async (url) => {
+const password = encodeURIComponent("AQ!SW@de3fr4");
+const url = `mongodb+srv://Athithian:${password}@cluster0.jbnemwi.mongodb.net/?retryWrites=true&w=majority&appName=Ecomm_Database`;
+
+const connectToDB = async () => {
   try {
     // Connects to monogDB
     mongoose.connect(url);
