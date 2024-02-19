@@ -38,7 +38,7 @@ server.use((req, res) => {
 server.use(ErrorHandler);
 
 // Server is running on port 3000
-server.listen(3000, () => {
-  console.log("Server Listening at 3000");
+server.listen(10000, () => {
+  console.log("Server Listening at 10000");
   connectToDB();
 });
